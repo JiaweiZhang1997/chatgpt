@@ -2,6 +2,7 @@
 import pyaudio
 import wave
 import numpy as np
+from config import main_dir
 _start = True
 
 def Monitor():
@@ -35,7 +36,7 @@ def Monitor():
     stream.stop_stream()
     stream.close()
     p.terminate()
-    wf = wave.open(WAVE_OUTPUT_FILENAME, 'wb')
+    wf = wave.open(main_dir + WAVE_OUTPUT_FILENAME, 'wb')
     wf.setnchannels(CHANNELS)
     wf.setsampwidth(p.get_sample_size(FORMAT))
     wf.setframerate(RATE)
