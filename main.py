@@ -4,7 +4,7 @@ from tts import text_to_vedio, get_xml
 import Play_mp3
 from chatgpt import start_chatgpt, chatgpt
 # 选择语音识别（语音） or 输入文本（文本）
-mode = "文本"
+mode = "语音"
 
 if __name__ == "__main__":
     chatbot, conversation_id, parent_id, prev_text = start_chatgpt()
@@ -16,6 +16,7 @@ if __name__ == "__main__":
         while True:
             if mode == "语音":
                 # 录音
+                print("请说话...")
                 Monitor()
                 # # 语音转文字
                 sentence = vedio_to_text()
